@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux内核应用--eBPF学习(一)</title>
+    <url>/2020/06/02/Linux%E5%86%85%E6%A0%B8%E5%BA%94%E7%94%A8-eBPF%E5%AD%A6%E4%B9%A0-%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Linux内核应用–eBPF学习-一"><a href="#Linux内核应用–eBPF学习-一" class="headerlink" title="Linux内核应用–eBPF学习(一)"></a>Linux内核应用–eBPF学习(一)</h1>]]></content>
+      <categories>
+        <category>Linux内核--应用</category>
+      </categories>
+      <tags>
+        <tag>eBPF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>读书笔记大纲</title>
     <url>/2020/05/30/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="我的读书笔记大纲"><a href="#我的读书笔记大纲" class="headerlink" title="我的读书笔记大纲"></a>我的读书笔记大纲</h1><p><img src="../images/san.jpg" alt=""></p>
 <a id="more"></a>
 
-<h2 id="Linux内核–驱动"><a href="#Linux内核–驱动" class="headerlink" title="Linux内核–驱动"></a>Linux内核–驱动</h2><p>参考书目</p>
+
+
+<p>就个人的学习方法而言，前十年喜欢由底向上，深入细节打好基础，后十年觉着学习应该不求甚解，自顶向下，重实践而轻理论。</p>
+<p>大概是知识广度增加了，很难每一项都深入，由实际的应用入手，可以在学习中有更强的目的性，明白哪些重要哪些只是了解即可。</p>
+<h2 id="Linux系统–应用"><a href="#Linux系统–应用" class="headerlink" title="Linux系统–应用"></a>Linux系统–应用</h2><p>参考书目</p>
 <ul>
-<li>《Linux那些事儿之我是USB》</li>
-<li>《Linux设备驱动开发详解》</li>
+<li>《UNIX环境高级编程》</li>
+<li>《UNIX网络编程 卷1:嵌套字联网API》</li>
+<li>《UNIX网络编程 卷2: 进程间通信》</li>
+<li>《Linux性能优化大师》</li>
+</ul>
+<h2 id="Linux系统–C-后端架构（应用深入）"><a href="#Linux系统–C-后端架构（应用深入）" class="headerlink" title="Linux系统–C++后端架构（应用深入）"></a>Linux系统–C++后端架构（应用深入）</h2><p>零声学院培训大纲</p>
+<p>参考书目</p>
+<ul>
+<li>《从零开始学架构》</li>
+<li>《软技能：代码之外的生存指南》</li>
 </ul>
 <h2 id="Linux内核–应用"><a href="#Linux内核–应用" class="headerlink" title="Linux内核–应用"></a>Linux内核–应用</h2><p>目标：</p>
 <p>熟悉Linux内存，调度，文件，I/O，网络</p>
@@ -22,15 +45,37 @@
 <li>《奔跑版Linux内核》</li>
 <li>《Linux内核分析及应用》</li>
 <li>《Linux内核深度解析》</li>
+<li>《Linux内核完全注释》</li>
+<li>《Linux开源存储全栈详解》</li>
+</ul>
+<h2 id="Linux内核–驱动"><a href="#Linux内核–驱动" class="headerlink" title="Linux内核–驱动"></a>Linux内核–驱动</h2><p>参考书目</p>
+<ul>
+<li>《Linux那些事儿之我是USB》</li>
+<li>《Linux设备驱动开发详解》</li>
+</ul>
+<h2 id="Linux内核–应用深入"><a href="#Linux内核–应用深入" class="headerlink" title="Linux内核–应用深入"></a>Linux内核–应用深入</h2><p>linux内核应用深入有很多方向。就实践而言，我将从<strong>KVM虚拟化</strong>，或者<strong>网络协议</strong>，这两个方向深入</p>
+<p>最后想加一个我的老本行<strong>嵌入式</strong>来引入一些新思考，如协处理器，FPGA制作卷积神经网络，或者对网络加速，甚至是制作一款芯片。</p>
+<p>参考书目</p>
+<ul>
+<li>嵌入式系统软硬件协同设计实战指南：基于XilinxZynq</li>
+</ul>
+<h2 id="机器学习–应用实践"><a href="#机器学习–应用实践" class="headerlink" title="机器学习–应用实践"></a>机器学习–应用实践</h2><p>本篇内容推荐使用tensorflow(GPU)</p>
+<p>安装流程</p>
+<ol>
+<li>anaconda</li>
+<li>tensorflow(GPU)</li>
+</ol>
+<p>参考书目</p>
+<ul>
+<li>《程序员的AI书：从代码开始》</li>
+<li></li>
 </ul>
 <h2 id="人工智能前沿"><a href="#人工智能前沿" class="headerlink" title="人工智能前沿"></a>人工智能前沿</h2><p>参考书目</p>
 <ul>
+<li>李宏毅–深度学习网课</li>
 <li>《动手学深度学习》</li>
-<li>《程序员的AI书：从代码开始》</li>
+<li></li>
 </ul>
-<h2 id="C-C-语言"><a href="#C-C-语言" class="headerlink" title="C/C++语言"></a>C/C++语言</h2><p>就一句真言，刷<strong>LeetCode</strong></p>
-<p><strong>boost</strong></p>
-<p><strong>STL</strong></p>
 <h2 id="深度学习与视觉识别"><a href="#深度学习与视觉识别" class="headerlink" title="深度学习与视觉识别"></a>深度学习与视觉识别</h2><p>参考书目</p>
 <ul>
 <li>《21个项目玩转深度学习》</li>
@@ -40,9 +85,19 @@
 <ul>
 <li>《统计学习方法》</li>
 <li>《模式识别》</li>
-<li>《深度学习》</li>
+<li>《机器学习》西瓜书</li>
+<li>《深度学习》花书</li>
 </ul>
-<h2 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h2>]]></content>
+<h2 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h2><p>数据挖掘的21道菜</p>
+<h2 id="C-C-语言"><a href="#C-C-语言" class="headerlink" title="C/C++语言"></a>C/C++语言</h2><p>就一句真言，刷<strong>LeetCode</strong></p>
+<p><strong>boost</strong></p>
+<p><strong>STL</strong></p>
+<p>参考书目</p>
+<ul>
+<li>C++ Primer Plus</li>
+<li>剑指Offer</li>
+</ul>
+]]></content>
       <categories>
         <category>Github</category>
       </categories>
