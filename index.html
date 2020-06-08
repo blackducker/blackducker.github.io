@@ -186,6 +186,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/06/%E5%AF%B9%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Bob">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黒鴉の手記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/06/%E5%AF%B9%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">对代码的一点思考</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-06 21:21:29" itemprop="dateCreated datePublished" datetime="2020-06-06T21:21:29+00:00">2020-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-08 13:18:07" itemprop="dateModified" datetime="2020-06-08T13:18:07+00:00">2020-06-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>工作以来，因为工作一直在嵌入式领域，主力用的一直是C语言，也学过一些Java，Python，但大多只是停留在面向对象的基本思想以及基础语法，并未有太多的深入接触。</p>
+<p>但是，因为公司的培训，懂得了如何评价一份代码的好坏一些重构，代码即文章的思想慢慢深入心里，渐渐的我也开始品味起了代码的味道。前不久上司无脑的丢给我一个协议栈，也不得不承认自己的确大型工程能力很弱，还是硬着头皮做了下来，真的是很多问题实际去思考才会发现，如何将一个功能明确的项目用C语言落实，对于架构的规划，其实有着很深的学问，也感觉自己貌似触摸到了一个门槛，却没有入内。引发了我深深的思考，因为这个经历需要我从初期的架构规划，结构分层，内存规划，性能考虑，数据结构选择，最后深入到每一个函数的接口定义。我发挥了近乎这些年手里接触过的C语言的工程代码的经验思考，经过了这一次调用思考，我越发的觉着其实我还可以做的更好，只是对于功能的抽象规划做不够好。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/06/%E5%AF%B9%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/Linux%E5%86%85%E6%A0%B8%E5%BA%94%E7%94%A8-eBPF%E5%AD%A6%E4%B9%A0-%E4%B8%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,7 +290,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 15:30:10" itemprop="dateModified" datetime="2020-06-06T15:30:10+00:00">2020-06-06</time>
+                <time title="修改时间：2020-06-08 13:18:07" itemprop="dateModified" datetime="2020-06-08T13:18:07+00:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +313,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Linux内核应用–eBPF学习-一"><a href="#Linux内核应用–eBPF学习-一" class="headerlink" title="Linux内核应用–eBPF学习(一)"></a>Linux内核应用–eBPF学习(一)</h1>
+          <h2 id="eBPF简介"><a href="#eBPF简介" class="headerlink" title="eBPF简介"></a>eBPF简介</h2><p>eBPF是将原先的BPF发展成一个指令集更复杂、应用范围更广的“内核虚拟机”。eBPF支持在用户态将C语言编写的一小段“内核代码”注入到内核中运行，注入时要先用llvm编译得到使用BPF指令集的elf文件，然后从elf文件中解析出可以注入内核的部分，最后用<code>bpf_load_program</code>方法完成注入。 用户态程序和注入到内核中的程序通过共用一个位于内核中map实现通信。为了防止注入的代码导致内核崩溃，eBPF会对注入的代码进行严格检查，拒绝不合格的代码的注入。</p>
+
       
     </div>
 
@@ -290,7 +364,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 15:30:10" itemprop="dateModified" datetime="2020-06-06T15:30:10+00:00">2020-06-06</time>
+                <time title="修改时间：2020-06-08 13:18:07" itemprop="dateModified" datetime="2020-06-08T13:18:07+00:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -404,7 +478,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -417,7 +491,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

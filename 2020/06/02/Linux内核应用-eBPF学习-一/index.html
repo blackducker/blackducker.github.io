@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Linux内核应用–eBPF学习(一)">
+  <meta name="description" content="eBPF简介eBPF是将原先的BPF发展成一个指令集更复杂、应用范围更广的“内核虚拟机”。eBPF支持在用户态将C语言编写的一小段“内核代码”注入到内核中运行，注入时要先用llvm编译得到使用BPF指令集的elf文件，然后从elf文件中解析出可以注入内核的部分，最后用bpf_load_program方法完成注入。 用户态程序和注入到内核中的程序通过共用一个位于内核中map实现通信。为了防止注入的代">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux内核应用--eBPF学习(一)">
 <meta property="og:url" content="http://yoursite.com/2020/06/02/Linux%E5%86%85%E6%A0%B8%E5%BA%94%E7%94%A8-eBPF%E5%AD%A6%E4%B9%A0-%E4%B8%80/index.html">
 <meta property="og:site_name" content="黒鴉の手記">
-<meta property="og:description" content="Linux内核应用–eBPF学习(一)">
+<meta property="og:description" content="eBPF简介eBPF是将原先的BPF发展成一个指令集更复杂、应用范围更广的“内核虚拟机”。eBPF支持在用户态将C语言编写的一小段“内核代码”注入到内核中运行，注入时要先用llvm编译得到使用BPF指令集的elf文件，然后从elf文件中解析出可以注入内核的部分，最后用bpf_load_program方法完成注入。 用户态程序和注入到内核中的程序通过共用一个位于内核中map实现通信。为了防止注入的代">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-02T20:15:14.000Z">
-<meta property="article:modified_time" content="2020-06-06T15:30:10.492Z">
+<meta property="article:modified_time" content="2020-06-08T13:18:07.116Z">
 <meta property="article:author" content="Bob">
 <meta property="article:tag" content="eBPF">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 15:30:10" itemprop="dateModified" datetime="2020-06-06T15:30:10+00:00">2020-06-06</time>
+                <time title="修改时间：2020-06-08 13:18:07" itemprop="dateModified" datetime="2020-06-08T13:18:07+00:00">2020-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +245,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Linux内核应用–eBPF学习-一"><a href="#Linux内核应用–eBPF学习-一" class="headerlink" title="Linux内核应用–eBPF学习(一)"></a>Linux内核应用–eBPF学习(一)</h1>
+        <h2 id="eBPF简介"><a href="#eBPF简介" class="headerlink" title="eBPF简介"></a>eBPF简介</h2><p>eBPF是将原先的BPF发展成一个指令集更复杂、应用范围更广的“内核虚拟机”。eBPF支持在用户态将C语言编写的一小段“内核代码”注入到内核中运行，注入时要先用llvm编译得到使用BPF指令集的elf文件，然后从elf文件中解析出可以注入内核的部分，最后用<code>bpf_load_program</code>方法完成注入。 用户态程序和注入到内核中的程序通过共用一个位于内核中map实现通信。为了防止注入的代码导致内核崩溃，eBPF会对注入的代码进行严格检查，拒绝不合格的代码的注入。</p>
+
     </div>
 
     
@@ -266,7 +267,10 @@
     <a href="/2020/05/30/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="读书笔记大纲">
       <i class="fa fa-chevron-left"></i> 读书笔记大纲
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/06/%E5%AF%B9%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/" rel="next" title="对代码的一点思考">
+      对代码的一点思考 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -326,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux内核应用–eBPF学习-一"><span class="nav-number">1.</span> <span class="nav-text">Linux内核应用–eBPF学习(一)</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#eBPF简介"><span class="nav-number">1.</span> <span class="nav-text">eBPF简介</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -342,7 +346,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -355,7 +359,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
