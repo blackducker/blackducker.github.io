@@ -52,6 +52,12 @@
 <h2 id="libvirt"><a href="#libvirt" class="headerlink" title="libvirt"></a>libvirt</h2><p>•libvirt是用于管理虚拟化平台的开源的API，后台程序和管理工具。<br>•包括一个API库，一个守护进程（Libvirtd），和一个命令行实用程序（virsh）。<br>•支持语言C,C++,Python,Perl,Ruby, java,JavaScript,php等语言。<br>•支持系统Linux，FreeBSD，Windows和OS-X。</p>
 <p>5 个 API 部分：虚拟机监控程序连接 API、域 API、网络 API、存储卷 API 以及存储池 API。</p>
 <p>libvirt是目前使用最为广泛的对KVM虚拟机进行管理的工具和API。Libvirtd是一个daemon进程，可以被本地的virsh调用，也可以被远程的virsh调用，Libvirtd调用qemu-kvm操作虚拟机</p>
+<h2 id="使用python为KVM编写脚本"><a href="#使用python为KVM编写脚本" class="headerlink" title="使用python为KVM编写脚本"></a>使用python为KVM编写脚本</h2><h2 id="Linux单点存储系统"><a href="#Linux单点存储系统" class="headerlink" title="Linux单点存储系统"></a>Linux单点存储系统</h2><p>Linux操作系统中基于内核文件系统的支持，其实可以分为两大块：一是内核中虚拟文件系统、具体文件系统、内核通用块设备及各个I/O子系统的支持；二是Linux用户态与文件系统相关的管理系统，以及应用程序可以用的系统调用或库文件（Glibc）的支持。<br>在用户态也有一些用户态文件系统的实现，但是一般这样的系统性能不是太高，因为文件系统最终是建立在实际的物理存储设备上的，且这些物理设备的驱动是在内核态实现的。那么即使文件系统放在用户态，I/O的读和写也还是需要放到内核态去完成的。除非相应的设备驱动也被放到用户态，形成一套完整的用户态I/O栈的解决方案，就可以降低I/O栈的深度，另外采用一些无锁化的并行机制，就可以提高I/O的性能。</p>
+<h2 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h2><p>由英特尔开源的SPDK（StoragePerformance Development Kit）软件库，就可以利用用户态的NVMe SSD（Non-VolatileMemory express）驱动，从而加速那些使用NVMe SSD的应用，如iSCSI Target或NVMe-oFTarget等。</p>
+<h2 id="Linux远程存储服务"><a href="#Linux远程存储服务" class="headerlink" title="Linux远程存储服务"></a>Linux远程存储服务</h2><ol>
+<li>块设备服务<br>Linux常用的块设备服务主要基于iSCSI（Internet Small Computer System Interface）和NVMe over Fabrics。<br>iSCSI协议是SCSI（Small Computer System Interface）协议在以太网上的扩展，一台机器通过iSCSI协议即可通过传输控制协议/网际协议（Transmission Control Protocol / InternetProtocol,TCP/IP）为其他客户提供共享的存储设备。通过iSCSI协议被访问的设备称为Target，而访问Target的客户（Client）端称为Initiator。目前Linux主流的iSCSI Target软件是基于Kernel的Linux-IO，在用户态可以使用targetcli工具进行管理。当然还有其他开源的iSCSITarget，如STGT、SCST等。iSCSI常用的iSCSI Initiator工具包括iscsiadm命令和libiscsi、open-iscsi等软件开发包。<br>NVMe over Fabrics则是NVMe协议在Fabrics上的延伸，主要的设计目的是让客户端能够更高效地访问远端的服务器上的NVMe盘。相对iSCSI协议，NVMe over Fabrics则完全是为高效访问基于NVMe协议的快速存储设备设计的，往往和带有RDMA（Remote Direct MemoryAccess）功能的以太网卡，或者光纤通道、Infiniband一起工作。</li>
+<li>文件存储服务<br>基于不同的协议，在Linux中可以提供很多文件粒度的服务。例如，基于网络文件系统（Network File System,NFS）协议的服务，服务器端可以直接加载支持网络文件系统协议的daemon</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
